@@ -37,6 +37,22 @@
 > ~/.local/bin/focus_or_spawn_terminal.sh
 > ```
 
+ ## Recommended tmux settings
+
+> * Click **Smart Foot Terminal** from the launcher
+> Add the following to your ```~/. tmux.conf``` to make scrolling smooth with Foot + tmux:
+> Enable mouse so the wheel works in copy-mode
+> ```bash
+> set -g mouse on
+> ```
+> * A modern terminfo entry inside tmux (pairs well with Foot)
+> ```bash
+> set -g default-terminal "tmux-256color"
+> ```
+> * Reload without restarting:
+> ```bash
+> tmux source-file ~/.tmux.conf
+> ```
 ## Optional: Keyboard Shortcut (GNOME)
 
 > **GUI method**
