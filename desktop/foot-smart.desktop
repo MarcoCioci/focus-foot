@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Smart Foot Terminal
+GenericName=Terminal Emulator
+Comment=Launch tmux-aware Foot terminal and preserve pane state
+Exec=sh -lc "$HOME/.local/bin/focus_or_spawn_terminal.sh"
+Icon=org.codeberg.dnkl.foot
+Terminal=false
+StartupNotify=true
+StartupWMClass=foot-terminal
+DBusActivatable=false
+Categories=Utility;TerminalEmulator;
