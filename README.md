@@ -79,12 +79,15 @@
 > SESSION_NAME=main APP_ID=foot-terminal TERM_FOR_FOOT=foot-direct ~/.local/bin/focus_or_spawn_terminal.sh
 > ```
 
-## Warning / Caveats
+##  Warning / Caveats
+- This script **closes other Foot windows**.  
+  - If those windows were **attached to tmux**, the jobs **keep running** in the tmux session (tmux is a server); you can reattach later and nothing is lost.  
+  - If a Foot window was **not using tmux** (plain shell/program), closing it will **terminate** whatever was running there.
+- Practical rule of thumb:
+  - **Safe:** all your work lives inside the same tmux session (default: `main`).  
+  - **Risky:** you have Foot windows running commands **outside** tmux.
+- Alternate screen apps (e.g., `less`, `vim`, `htop`) manage scrolling independently; history lives in the underlying shell pane.
 
-> * This script **kills all Foot windows** that do not own the preserved pane.
->   If you have other Foot windows running long operations (e.g., `apt upgrade`, jobs, editors), they **will be terminated**.
-> * If you need to exclude a window, consider running it in a different terminal app, a different tmux session, or extend the script with a whitelist.
-> * Alternate screen apps (e.g., `less`, `vim`, `htop`) control scroll independently; history is preserved in the underlying shell pane.
 
 
 
